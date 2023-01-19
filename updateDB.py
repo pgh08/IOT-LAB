@@ -16,7 +16,7 @@ cur = db.cursor()
 try:
 	while True:
 		degree = GPIO.input(pin)
-		timenow = datetime.utcnow()
+		timenow = datetime.datetime.utcnow()
 		print(degree)
 		
 		cur.execute('''INSERT INTO Sensorstats(date_time,irsensordata) VALUES(%s,%s);''',(timenow,degree));
