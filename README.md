@@ -29,3 +29,14 @@ create user 'user_name'@'localhost' identified by 'password';
 
 # For switching database.
 use database_name;
+
+# For creating table.
+create table table_name(column_1_name varchar(50), column_2_name float);
+
+# To grant Privileges.
+grant all privileges on database_name.* to 'user_name'@'localhost';
+flush privileges;
+
+# To view updated data in database.
+use database_name;
+select * from table_name;
