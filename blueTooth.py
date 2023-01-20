@@ -28,14 +28,14 @@ try:
 		data = client.recv(1024)
 		print(data)
 		
-		if data == '1':
+		if len(data) == 2:
 			GPIO.output(pin, True)
 			send_data = "Light is ON"
-		elif data == '0':
+		elif len(data) == 3:
 			GPIO.output(pin, False)
 			sned_data = "Light is OFF"
 		else:
-			send_data = "Type 1 or 0"
+			send_data = "Type ON or OFF"
 		
 		client.send(send_data)
 except:
